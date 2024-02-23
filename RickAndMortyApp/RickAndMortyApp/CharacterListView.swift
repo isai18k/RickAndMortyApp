@@ -133,7 +133,7 @@ struct CharacterDetailView: View {
                    .padding(.horizontal, 80)
                    .background(.green.opacity(0.70))
                    .cornerRadius(20)
-                   .offset(y: -24)
+                   .offset(y: -35)
                }
            })
            .edgesIgnoringSafeArea(.all)
