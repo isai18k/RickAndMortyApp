@@ -13,6 +13,7 @@ import Kingfisher
 struct CharacterListView: View {
     @StateObject var viewModel = CharacterListViewModel()
     @State private var showMenu = false
+    @State private var isSearchViewPresented = false
 
     var body: some View {
         NavigationView {
@@ -44,23 +45,28 @@ struct CharacterListView: View {
             .navigationBarTitleDisplayMode(.inline)
             .font(.footnote)
             .toolbar {
-                            ToolbarItem(placement: .navigationBarTrailing) {
-                                Menu {
-                                    Button(action: {
-                                        // Action for Option 1
-                                    }) {
-                                        Label("Search Character", systemImage: "magnifyingglass")
-                                    }
-                                    Button(action: {
-                                        // Action for Option 2
-                                    }) {
-                                        Label("About App", systemImage: "flame")
-                                    }
-                                } label: {
-                                        Image(systemName: "ellipsis.circle")
-                                }
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Menu {
+                            Button(action: {
+                                // Action for Option 1
+                                isSearchViewPresented = true // Set the state variable to true to present the SearchView
+                            }) {
+                                Label("Search Character", systemImage: "magnifyingglass")
                             }
+                            Button(action: {
+                                // Action for Option 2
+                            }) {
+                                Label("About App", systemImage: "flame")
+                            }
+                        } label: {
+                                Image(systemName: "ellipsis.circle")
                         }
+                    }
+            }
+            .sheet(isPresented: $isSearchViewPresented) {
+                // Present the CharacterSearchView when isSearchViewPresented is true
+                CharacterSearchView()
+            }
             
         }
         .onAppear {
@@ -70,6 +76,57 @@ struct CharacterListView: View {
                 Alert(title: Text("Options"), message: nil, dismissButton: .default(Text("OK")))
         }
     }
+}
+
+struct CharacterSearchView: View {
+    @StateObject var viewModel = CharacterListViewModel()
+        @State private var searchText = ""
+
+        var body: some View {
+            NavigationView {
+                List {
+                    SearchBar(text: $searchText) // Add the search bar
+                    ForEach(filteredCharacters) { character in
+                        NavigationLink(destination: CharacterDetailView(character: character)) {
+                            HStack {
+                                KFImage(URL(string: character.image))
+                                    .placeholder {
+                                        Image(systemName: "person.fill")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(.gray)
+                                    }
+                                    .onFailure { error in
+                                        print("Image failed to load: \(error)")
+                                    }
+                                    .fade(duration: 0.25)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 50, height: 50)
+                                    .clipShape(Circle())
+
+                                Text(character.name)
+                            }
+                        }
+                    }
+                }
+                .navigationTitle("Search Characters")
+                .navigationBarTitleDisplayMode(.inline)
+            }
+            .onAppear {
+                viewModel.fetchCharacters()
+            }
+        }
+
+        // Computed property to filter characters based on search query
+        private var filteredCharacters: [RMCharacterModel] {
+            if searchText.isEmpty {
+                return viewModel.characters
+            } else {
+                return viewModel.characters.filter { $0.name.lowercased().contains(searchText.lowercased()) }
+            }
+        }
 }
 
 struct CharacterDetailView: View {

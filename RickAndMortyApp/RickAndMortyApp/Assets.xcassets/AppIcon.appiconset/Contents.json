@@ -1,12 +1,14 @@
 {
   "images" : [
     {
+      "filename" : "appIcon_40.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "appIcon_60.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
@@ -27,12 +29,14 @@
       "size" : "29x29"
     },
     {
+      "filename" : "appIcon_76.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "2x",
       "size" : "38x38"
     },
     {
+      "filename" : "appIcon_114.png",
       "idiom" : "universal",
       "platform" : "ios",
       "scale" : "3x",
@@ -102,6 +106,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "appIcon_1024.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
