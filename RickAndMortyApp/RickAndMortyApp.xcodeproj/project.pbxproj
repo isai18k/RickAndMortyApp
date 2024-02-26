@@ -35,6 +35,12 @@
 		BDAD29CE2B8C634C00D2877D /* CharacterCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29CB2B8C634C00D2877D /* CharacterCellView.swift */; };
 		BDAD29D02B8C63A400D2877D /* CharacterSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29CF2B8C63A400D2877D /* CharacterSearchPresenter.swift */; };
 		BDAD29D42B8C7EC200D2877D /* CharacterListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29D32B8C7EC200D2877D /* CharacterListViewModelTests.swift */; };
+		BDAD29D52B8CE02100D2877D /* RickAndMortyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E01762B871304008E6EDB /* RickAndMortyAppApp.swift */; };
+		BDAD29D62B8CE02100D2877D /* RickAndMortyAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E01762B871304008E6EDB /* RickAndMortyAppApp.swift */; };
+		BDAD29D72B8CE02600D2877D /* CharacterSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29CF2B8C63A400D2877D /* CharacterSearchPresenter.swift */; };
+		BDAD29D82B8CE02700D2877D /* CharacterSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29CF2B8C63A400D2877D /* CharacterSearchPresenter.swift */; };
+		BDAD29D92B8CE02900D2877D /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29B42B8C5F3500D2877D /* CharacterListModel.swift */; };
+		BDAD29DA2B8CE02A00D2877D /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29B42B8C5F3500D2877D /* CharacterListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -350,7 +356,10 @@
 				BDAD29C52B8C619400D2877D /* CharacterSearchView.swift in Sources */,
 				BDAD29BD2B8C608E00D2877D /* CharacterListView.swift in Sources */,
 				BDAD29C92B8C621400D2877D /* CharacterDetailView.swift in Sources */,
+				BDAD29D92B8CE02900D2877D /* CharacterListModel.swift in Sources */,
+				BDAD29D72B8CE02600D2877D /* CharacterSearchPresenter.swift in Sources */,
 				BDAD29D42B8C7EC200D2877D /* CharacterListViewModelTests.swift in Sources */,
+				BDAD29D52B8CE02100D2877D /* RickAndMortyAppApp.swift in Sources */,
 				BDAD29B82B8C5F7C00D2877D /* CharacterListPresenter.swift in Sources */,
 				BDAD29CD2B8C634C00D2877D /* CharacterCellView.swift in Sources */,
 				BD5E01882B871305008E6EDB /* RickAndMortyAppTests.swift in Sources */,
@@ -364,7 +373,10 @@
 				BD5E01922B871305008E6EDB /* RickAndMortyAppUITests.swift in Sources */,
 				BDAD29B92B8C5F7C00D2877D /* CharacterListPresenter.swift in Sources */,
 				BDAD29CE2B8C634C00D2877D /* CharacterCellView.swift in Sources */,
+				BDAD29DA2B8CE02A00D2877D /* CharacterListModel.swift in Sources */,
+				BDAD29D82B8CE02700D2877D /* CharacterSearchPresenter.swift in Sources */,
 				BDAD29C62B8C619400D2877D /* CharacterSearchView.swift in Sources */,
+				BDAD29D62B8CE02100D2877D /* RickAndMortyAppApp.swift in Sources */,
 				BDAD29CA2B8C621400D2877D /* CharacterDetailView.swift in Sources */,
 				BDAD29BE2B8C608E00D2877D /* CharacterListView.swift in Sources */,
 				BD5E01942B871305008E6EDB /* RickAndMortyAppUITestsLaunchTests.swift in Sources */,
@@ -510,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RickAndMortyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = RickAndMorty;
@@ -541,6 +554,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RickAndMortyApp/Preview Content\"";
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = RickAndMorty;
@@ -570,6 +584,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -589,6 +604,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -607,6 +623,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JIGR.RickAndMortyAppUITests;
@@ -624,6 +641,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A28JW3BHL9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JIGR.RickAndMortyAppUITests;

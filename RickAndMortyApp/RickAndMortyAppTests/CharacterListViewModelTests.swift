@@ -8,12 +8,30 @@
 import XCTest
 import SwiftUI
 import RickMortySwiftApi
+import Kingfisher
 @testable import RickAndMortyApp
 
 class CharacterListViewTests: XCTestCase {
    
-    
     // Add more test cases as needed for other functionalities
+    func testCharacterListViewModelInitialization() {
+        let viewModel = CharacterListModel()
+        XCTAssertNotNil(viewModel)
+    }
+        
+    func testCharacterListViewModelFetchCharacters() {
+        let viewModel = CharacterSearchPresenter()
+        viewModel.fetchCharacters()
+        // Add assertions based on the expected behavior of fetchCharacters() method
+    }
+}
+
+class CharacterSearchViewTests: XCTestCase {
+    // Write tests for CharacterSearchView
+}
+
+class CharacterDetailViewTests: XCTestCase {
+    // Write tests for CharacterDetailView
 }
 
 final class CharacterListViewModelTests: XCTestCase {
@@ -29,6 +47,12 @@ final class CharacterListViewModelTests: XCTestCase {
 
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func testFetchCharacters() {
+        let viewModel = CharacterSearchPresenter()
+        viewModel.fetchCharacters()
+        // Add assertions based on the expected behavior of fetchCharacters() method
     }
     
     func testCharacterListPresenterFetchCharacters() {
