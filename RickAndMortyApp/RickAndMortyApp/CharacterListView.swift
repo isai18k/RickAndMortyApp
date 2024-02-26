@@ -10,7 +10,7 @@ import SwiftUIX
 import RickMortySwiftApi
 import Kingfisher
 
-struct CharacterListView: View {
+struct CharacterListView2: View {
     @StateObject var viewModel = CharacterListViewModel()
     @State private var showMenu = false
     @State private var isSearchViewPresented = false
