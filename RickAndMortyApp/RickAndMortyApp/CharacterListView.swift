@@ -20,12 +20,7 @@ struct CharacterListView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
-               
-                Image("RaMBackGround2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+            VStack {
                 ScrollView {
                     LazyVGrid(columns: gridItems, spacing: 16) {
                         ForEach(viewModel.characters) { character in
@@ -71,33 +66,43 @@ struct CharacterListView: View {
                         }
                     }
                     .padding()
+                    .frame(maxWidth: .infinity)
                 }
-                .navigationTitle("Rick and Morty Characters")
-                .navigationBarTitleDisplayMode(.inline)
-                .font(.footnote)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Menu {
-                            Button(action: {
-                                // Action for Search Character
-                                isSearchViewPresented = true
-                            }) {
-                                Label("Search Character", systemImage: "magnifyingglass")
-                            }
-                            Button(action: {
-                                // Action for Option About
-                            }) {
-                                Label("About App", systemImage: "flame")
-                            }
-                        } label: {
-                            Image(systemName: "ellipsis.circle")
+            }
+            .background(
+                    Image("RaMBackGround2") // Agrega la imagen como fondo del VStack
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity) // Ajusta el tamaño de la imagen al tamaño del VStack
+                    .edgesIgnoringSafeArea(.all)
+            )
+            .navigationTitle("RICK AND MORTY CHARACTERS")
+            .navigationBarTitleDisplayMode(.inline)
+            .font(.footnote)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Button(action: {
+                            // Action for Search Character
+                            isSearchViewPresented = true
+                        }) {
+                            Label("Search Character", systemImage: "magnifyingglass")
                         }
+                        Button(action: {
+                            // Action for Option About
+                        }) {
+                            Label("About App", systemImage: "flame")
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
                     }
                 }
             }
             .sheet(isPresented: $isSearchViewPresented) {
                 CharacterSearchView()
             }
+            .navigationBarColor(backgroundColor: .black, tintColor: .green)
+
         }
         .onAppear {
             viewModel.fetchCharacters()
@@ -107,6 +112,30 @@ struct CharacterListView: View {
         }
     }
 }
+
+extension View {
+    func navigationBarColor(backgroundColor: UIColor?, tintColor: UIColor?) -> some View {
+        self.modifier(NavigationBarColorModifier(backgroundColor: backgroundColor, tintColor: tintColor))
+    }
+}
+
+struct NavigationBarColorModifier: ViewModifier {
+    init(backgroundColor: UIColor?, tintColor: UIColor?) {
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = backgroundColor
+        coloredAppearance.titleTextAttributes = [.foregroundColor: tintColor ?? .black]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+    }
+    
+    func body(content: Content) -> some View {
+        content
+    }
+}
+
 
 struct CharacterSearchView: View {
     @StateObject var viewModel = CharacterListViewModel()
