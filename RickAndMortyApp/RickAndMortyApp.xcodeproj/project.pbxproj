@@ -41,6 +41,7 @@
 		BDAD29D82B8CE02700D2877D /* CharacterSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29CF2B8C63A400D2877D /* CharacterSearchPresenter.swift */; };
 		BDAD29D92B8CE02900D2877D /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29B42B8C5F3500D2877D /* CharacterListModel.swift */; };
 		BDAD29DA2B8CE02A00D2877D /* CharacterListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29B42B8C5F3500D2877D /* CharacterListModel.swift */; };
+		BDAD29DC2B8CEC0200D2877D /* CharacterListViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAD29DB2B8CEC0200D2877D /* CharacterListViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		BDAD29CB2B8C634C00D2877D /* CharacterCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCellView.swift; sourceTree = "<group>"; };
 		BDAD29CF2B8C63A400D2877D /* CharacterSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSearchPresenter.swift; sourceTree = "<group>"; };
 		BDAD29D32B8C7EC200D2877D /* CharacterListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewModelTests.swift; sourceTree = "<group>"; };
+		BDAD29DB2B8CEC0200D2877D /* CharacterListViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListViewTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			children = (
 				BD5E01872B871305008E6EDB /* RickAndMortyAppTests.swift */,
 				BDAD29D32B8C7EC200D2877D /* CharacterListViewModelTests.swift */,
+				BDAD29DB2B8CEC0200D2877D /* CharacterListViewTests.swift */,
 			);
 			path = RickAndMortyAppTests;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDAD29C52B8C619400D2877D /* CharacterSearchView.swift in Sources */,
+				BDAD29DC2B8CEC0200D2877D /* CharacterListViewTests.swift in Sources */,
 				BDAD29BD2B8C608E00D2877D /* CharacterListView.swift in Sources */,
 				BDAD29C92B8C621400D2877D /* CharacterDetailView.swift in Sources */,
 				BDAD29D92B8CE02900D2877D /* CharacterListModel.swift in Sources */,
